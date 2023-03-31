@@ -138,6 +138,6 @@ using System.Diagnostics;
 }
 {
     
-    var summary = BenchmarkRunner.Run<Json>();
+    //var summary = BenchmarkRunner.Run<Json>();
     Console.ReadLine();
 }
