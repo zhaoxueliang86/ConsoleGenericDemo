@@ -61,4 +61,27 @@ namespace ConsoleGenericDemo
             return (SchoolReport)MemberwiseClone();
         }
     }
+
+    public class demo
+    {
+        private System.Timers.Timer timer = new(2000);
+        public demo()
+        {
+            Console.WriteLine($"{DateTime.Now}：构造函数");
+            timer.Elapsed += Timer_Elapsed;
+            timer.Start();
+        }
+
+        private void Timer_Elapsed(object? sender, System.Timers.ElapsedEventArgs e)
+        {
+            Console.WriteLine($"{DateTime.Now}：Timer_Elapsed");
+        }
+
+        public void reset()
+        {
+            timer.Stop();
+            Console.WriteLine($"{DateTime.Now}：Reset");
+            timer.Start();
+        }
+    }
 }
